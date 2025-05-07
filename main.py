@@ -1,22 +1,15 @@
-# Пример итератора
-from random import random
+# Функция-генератор
 
-class RandomIterator:
-    def __iter__(self):
-        return self
+def get_list():
+    for x in [1,2,3,4]:
+        yield x
 
-    def __init__(self, k):
-        self.k = k
-        self.i = 0
+a = get_list()
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
 
-    def __next__(self):
-        if self.i < self.k:
-            self.i += 1
-            return random()
-        else:
-            raise StopIteration
 
-for x in RandomIterator(10):
-    print(x)
 
 
